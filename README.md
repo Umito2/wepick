@@ -34,7 +34,11 @@ Budget guides use Egyptian pounds for **two people**: up to **EGP 300**, up to *
 - [`wepick-android-preview.zip`](docs/downloads/wepick-android-preview.zip) contains the debug-signed Android emulator APK and `SETUP.txt`.
 - [`wepick-mvp.zip`](docs/downloads/wepick-mvp.zip) contains the native Android project and Firebase backend source.
 
-The supplied APK uses **anonymous sign-in only** and requires local Firebase Authentication, Firestore, and Cloud Functions emulators. Google sign-in is hidden in this preview; production Android builds require a real Firebase project and Google OAuth configuration. Follow `SETUP.txt` and the Android source README before testing. The Android source archive excludes this website.
+The **1.0.2 developer preview** uses **anonymous sign-in only** and requires a computer Android emulator plus local Firebase Authentication, Firestore, and Cloud Functions emulators. The supplied APK points to `10.0.2.2`; its backend cannot connect from a real phone as configured. A phone build needs a reachable emulator host or a configured production Firebase backend.
+
+Version 1.0.2 adds bounded initial loading, retry controls, and an always-available **Try browser demo** button. It still requires the backend setup for Android pairing and sync. The [browser demo](https://umito2.github.io/wepick/#demo) works without that setup and simulates both partners on one page.
+
+Google sign-in is hidden in this preview; production Android builds require a real Firebase project and Google OAuth configuration. Follow `SETUP.txt` and the Android source README before testing. The Android source archive excludes this website.
 
 ## Publish elsewhere
 
