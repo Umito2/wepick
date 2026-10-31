@@ -2,9 +2,9 @@
 
 A responsive, buildless website for **WePick — The Zero-Argument Decision Engine**. It includes an interactive two-partner browser demo, Android/source downloads, and locally served photography.
 
-The intended **GitHub Pages destination** is [umito2.github.io/wepick](https://umito2.github.io/wepick/). This export is prepared for classic Pages hosting from the repository's `docs/` directory; the address becomes live after GitHub Pages is enabled and deployment succeeds.
+**[Open the live WePick website →](https://umito2.github.io/wepick/)**
 
-The earlier [WePick preview on Sites](https://wepick-together.steepcarat.chatgpt.site) is **owner-private**. Its access settings are independent of this public repository.
+The website is hosted publicly on GitHub Pages from this repository's `docs/` directory. Anyone can open the link without a ChatGPT account.
 
 ## Preview locally
 
@@ -44,4 +44,4 @@ For other hosts, use `docs/` as the static document root. Deploy all files toget
 
 Photography by Tim Mossholder, Nik Owens, Georgia Vagim, and Julia Ivanina is used under the standard [Unsplash License](https://unsplash.com/license). Verified source links, download details, and attribution are retained in [ASSETS.md](ASSETS.md) and the visible [photo credits page](docs/credits.html).
 
-This directory is a clean public export. Original Sites identity files, credentials, runtime data, and local QA artifacts are excluded.
+Deployment credentials, runtime data, and local QA artifacts are excluded from this repository.
