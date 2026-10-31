@@ -1,0 +1,30 @@
+# Local dependencies, generated caches, and preview logs.
+node_modules/
+.cache/
+coverage/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Editor settings and local environment files.
+.idea/
+.vscode/
+.env
+.env.*
+!.env.example
+
+# Hosting identities, runtime data, credentials, and local QA captures.
+.openai/
+.sites-runtime/
+credentials/
+runtime/
+qa/
+test-results/
+playwright-report/
+*.pem
+*.key
+*.p12
+*.jks
+*.keystore
+google-services.json
