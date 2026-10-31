@@ -4,7 +4,7 @@
 
   const BUDGETS = Object.freeze({ LOW: 0, MEDIUM: 1, HIGH: 2 });
   const CATEGORY_LABELS = Object.freeze({ FOOD: "Food delivery", OUTINGS: "Café outing", MOVIES: "Movie night", ACTIVITIES: "Something together" });
-  const PRICE_LABELS = Object.freeze({ LOW: "$", MEDIUM: "$$", HIGH: "$$$" });
+  const PRICE_LABELS = Object.freeze({ LOW: "Up to EGP 300", MEDIUM: "EGP 301–700", HIGH: "Over EGP 700" });
   const DEFAULT_FILTER = Object.freeze({ category: "FOOD", budget: "HIGH", mood: "CHILL" });
 
   function randomIndex(length) {
@@ -214,13 +214,15 @@
       const body = element("div", "card-body");
       body.append(element("h3", "", item.title));
       const tags = element("div", "card-tags");
-      tags.append(element("span", "price-tag", PRICE_LABELS[item.priceTier]));
+      const priceTag = element("span", "price-tag", PRICE_LABELS[item.priceTier]);
+      priceTag.setAttribute("aria-label", `${PRICE_LABELS[item.priceTier]} for two; budget guide.`);
+      tags.append(priceTag);
       tags.append(element("span", "vibe-tag", item.vibeTags.map(mood => mood[0] + mood.slice(1).toLowerCase()).join(" · ")));
       body.append(tags, element("p", "description", item.description));
       card.append(visual, body);
       if (depth === 0) {
         card.tabIndex = 0;
-        card.setAttribute("aria-label", `${item.title}. ${PRICE_LABELS[item.priceTier]}. Use left arrow to pass or right arrow to like.`);
+        card.setAttribute("aria-label", `${item.title}. ${PRICE_LABELS[item.priceTier]} for two; budget guide. Use left arrow to pass or right arrow to like.`);
         attachDrag(card, like, pass, item.id);
       } else {
         card.setAttribute("aria-hidden", "true");
@@ -238,7 +240,7 @@
       if (session.match) {
         const winner = renderCard(session.matchedItem, 0);
         winner.removeAttribute("tabindex");
-        winner.setAttribute("aria-label", `${session.matchedItem.title}, your shared demo match.`);
+        winner.setAttribute("aria-label", `${session.matchedItem.title}, your shared demo match. ${PRICE_LABELS[session.matchedItem.priceTier]} for two; budget guide.`);
         const reopen = element("button", "demo-open-match", "See our match");
         reopen.type = "button";
         reopen.addEventListener("click", () => showMatch());

@@ -27,6 +27,8 @@ node --test tests/demo-model.test.cjs
 
 The browser demo simulates both partners on one page. It supports independent votes, mutual matches, limited vetoes, and a roulette choice from the union of liked items after both partners finish. It does not authenticate visitors or connect separate devices.
 
+Budget guides use Egyptian pounds for **two people**: up to **EGP 300**, up to **EGP 700**, or **any budget**. Cards show up to EGP 300, EGP 301–700, and over EGP 700. These are illustrative tiers attached to preloaded ideas, not live menu quotes or dollar conversions; actual restaurant and venue costs need to be confirmed.
+
 ## Android downloads
 
 - [`wepick-android-preview.zip`](docs/downloads/wepick-android-preview.zip) contains the debug-signed Android emulator APK and `SETUP.txt`.
