@@ -31,14 +31,17 @@ Budget guides use Egyptian pounds for **two people**: up to **EGP 300**, up to *
 
 ## Android downloads
 
-- [`wepick-android-preview.zip`](docs/downloads/wepick-android-preview.zip) contains the debug-signed Android emulator APK and `SETUP.txt`.
+- [`WePick-1.1.1.apk`](docs/downloads/WePick-1.1.1.apk) is the signed Android 8.0+ phone build, configured for Firebase Authentication and the Firestore Spark backend.
 - [`wepick-mvp.zip`](docs/downloads/wepick-mvp.zip) contains the native Android project and Firebase backend source.
+- The [1.0.2 emulator developer archive](https://github.com/Umito2/wepick/releases/tag/v1.0.2-emulator-preview) retains the older APK and its matching source/setup files.
 
-The **1.0.2 developer preview** uses **anonymous sign-in only** and requires a computer Android emulator plus local Firebase Authentication, Firestore, and Cloud Functions emulators. The supplied APK points to `10.0.2.2`; its backend cannot connect from a real phone as configured. A phone build needs a reachable emulator host or a configured production Firebase backend.
+The **1.1.1 phone build** uses **anonymous sign-in** and an internet connection for Firebase Authentication, partner pairing, and real-time shared sessions across phones. It does not need local Firebase emulators, Cloud Functions, a billing account, or a payment card. Keep the backend project on Spark; free quotas apply and service may pause when an allowance is exhausted. Google sign-in remains hidden until a production web OAuth client is configured.
 
-Version 1.0.2 adds bounded initial loading, retry controls, and an always-available **Try browser demo** button. It still requires the backend setup for Android pairing and sync. The [browser demo](https://umito2.github.io/wepick/#demo) works without that setup and simulates both partners on one page.
+The Android tie-breaker chooses an eligible liked item on the client and stores one shared result. Firestore rules validate the candidate and completed voting; they cannot certify a modified client's randomness. No paid AI service is used. See the source README for [Firebase Spark plan](https://firebase.google.com/docs/projects/billing/firebase-pricing-plans) setup and [Firestore quotas](https://firebase.google.com/docs/firestore/quotas).
 
-Google sign-in is hidden in this preview; production Android builds require a real Firebase project and Google OAuth configuration. Follow `SETUP.txt` and the Android source README before testing. The Android source archive excludes this website.
+**Installation and Play Integrity attestation on physical phones have not yet been validated for this release.** The build retains bounded loading, retry controls, and the **Try browser demo** button. The [browser demo](https://umito2.github.io/wepick/#demo) simulates both partners on one page and does not connect phones.
+
+The **1.0.2 developer archive** still points to `10.0.2.2` and requires a computer Android emulator plus local Firebase Auth, Firestore, and Functions emulators. Follow its included `SETUP.txt` before using it. The Android source archive excludes this website.
 
 ## Publish elsewhere
 
